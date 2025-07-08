@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebook Chocolate Perfeito - Domine a Arte do Chocolate Temperado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #3a1f04;
+            --secondary: #f8c255;
+            --accent: #fff5e6;
+            --dark: #1a0a00;
+            --light: #fff9f0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(58,31,4,0.9) 0%, rgba(248,194,85,0.7) 100%);
+        }
+        
+        .neon-gold {
+            text-shadow: 0 0 5px rgba(248, 194, 85, 0.7), 0 0 10px rgba(248, 194, 85, 0.5);
+        }
+        
+        .neon-white {
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .glow-box {
+            box-shadow: 0 0 15px rgba(248, 194, 85, 0.5);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .btn-gold {
+            background: linear-gradient(45deg, #f8c255 0%, #e8a825 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(248, 194, 85, 0.4);
+        }
+        
+        .translucent-card {
+            background: rgba(255, 245, 230, 0.85);
+            backdrop-filter: blur(10px);
+        }
+        
+        .chocolate-drip {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            background: linear-gradient(to bottom, transparent 10%, var(--primary) 10%, var(--primary) 30%, transparent 30%);
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+        }
+        
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(10deg) scale(1.1);
+            color: var(--secondary);
+        }
+        
+        .countdown-box {
+            background: rgba(58, 31, 4, 0.8);
+        }
+        
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(58, 31, 4, 0.2);
+        }
+        
+        .guarantee-badge {
+            animation: spin 8s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .chocolate-particle {
+            position: absolute;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+        
+        .price-strike {
+            position: relative;
+        }
+        
+        .price-strike::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #ff0000;
+            transform: rotate(-10deg);
+        }
+        
+        .coupon-box {
+            animation: shake 0.5s linear infinite alternate;
+        }
+        
+        @keyframes shake {
+            0% { transform: rotate(-1deg); }
+            100% { transform: rotate(1deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-top: 30px;
+            }
+            
+            .ebook-mockup {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            
+            .feature-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-utensils text-2xl text-amber-700 mr-2"></i>
+                <span class="text-xl font-bold text-amber-900 font-serif">Chocolate Perfeito</span>
+            </div>
+            <div>
+                <a href="#oferta" class="hidden md:inline-block bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full font-medium transition duration-300 transform hover:scale-105">
+                    QUERO MEU EBOOK AGORA!
+                </a>
+                <button class="md:hidden text-amber-900 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="hero-content md:w-1/2 mb-10 md:mb-0 md:pr-10 animate__animated animate__fadeInLeft">
+                    <span class="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium mb-4 neon-white">LANÇAMENTO EXCLUSIVO</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight neon-gold">
+                        Domine a Arte do <span class="text-amber-300">Chocolate Temperado</span> Perfeito
+                    </h1>
+                    <p class="text-xl text-white mb-8 opacity-90 neon-white">
+                        Descubra os segredos dos melhores chocolatiers e transforme seu hobby em uma fonte de renda com nosso ebook completo!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="#oferta" class="btn-gold text-white font-bold py-4 px-8 rounded-full text-lg text-center pulse">
+                            <i class="fas fa-shopping-cart mr-2"></i> GARANTIR MEU EBOOK
+                        </a>
+                        <a href="#diferenciais" class="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-8 rounded-full text-lg text-center border border-white/30 transition duration-300">
+                            <i class="fas fa-play-circle mr-2"></i> ASSISTIR VÍDEO
+                        </a>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex -space-x-2 mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Cliente satisfeita">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Cliente satisfeito">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Cliente satisfeita">
+                        </div>
+                        <p class="text-white text-sm">
+                            <span class="font-bold">+2.347</span> pessoas já adquiriram e estão transformando seus chocolates!
+                        </p>
+                    </div>
+                </div>
+                <div class="ebook-mockup md:w-1/2 relative float animate__animated animate__fadeInRight">
+                    <div class="relative max-w-md mx-auto">
+                        <img src="imagens/bombom miduin.jpg">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
+                            <div class="text-center">
+                                <p class="text-gray-500 text-sm line-through mb-1">De R$97,00</p>
+                                <p class="text-2xl font-bold text-amber-700">R$47,00</p>
+                                <p class="text-xs text-gray-600">ou 9x de R$5,20</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chocolate drips decoration -->
+        <div class="chocolate-drip -left-10 top-1/4 rotate-12 hidden md:block"></div>
+        <div class="chocolate-drip -right-10 top-1/3 -rotate-12 hidden md:block"></div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="bg-amber-50 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt text-amber-700 text-2xl mr-2"></i>
+                    <span class="text-sm font-medium">Compra 100% Segura</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-lock text-amber-700 text-2xl mr-2"></i>
+                    <span class="text-sm font-medium">Dados Protegidos</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-star text-amber-700 text-2xl mr-2"></i>
+                    <span class="text-sm font-medium">+2.347 Avaliações 5★</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-award text-amber-700 text-2xl mr-2"></i>
+                    <span class="text-sm font-medium">Garantia de 7 Dias</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white" id="diferenciais">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4">O Que Você Vai Aprender?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Domine técnicas profissionais que vão transformar completamente sua relação com o chocolate</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="feature-card bg-amber-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="feature-icon text-4xl text-amber-700 mb-4">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900 mb-3">Temperagem Perfeita</h3>
+                    <p class="text-gray-600">Domine o método exato para temperar chocolate como um profissional, com cristalização impecável e brilho intenso.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="feature-card bg-amber-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="feature-icon text-4xl text-amber-700 mb-4">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900 mb-3">Escolha dos Ingredientes</h3>
+                    <p class="text-gray-600">Saiba exatamente quais chocolates comprar, como identificar qualidade e onde encontrar os melhores fornecedores.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="feature-card bg-amber-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="feature-icon text-4xl text-amber-700 mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900 mb-3">Equipamentos Essenciais</h3>
+                    <p class="text-gray-600">Descubra os utensílios que realmente fazem diferença sem gastar fortunas em equipamentos desnecessários.</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="feature-card bg-amber-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="feature-icon text-4xl text-amber-700 mb-4">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900 mb-3">Técnicas Avançadas</h3>
+                    <p class="text-gray-600">Aprenda efeitos especiais, texturas diferenciadas e combinações que vão impressionar seus clientes.</p>
+                </div>
+                
+                <!-- Benefit 5 -->
+                <div class="feature-card bg-amber-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="feature-icon text-4xl text-amber-700 mb-4">
+                        <i class="fas fa-business-time"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900 mb-3">Venda Seus Chocolates</h3>
+                    <p class="text-gray-600">Estratégias comprovadas para transformar seu hobby em negócio e vender seus chocolates com ótimo lucro.</p>
+                </div>
+                
+                <!-- Benefit 6 -->
+                <div class="feature-card bg-amber-50 rounded-xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="feature-icon text-4xl text-amber-700 mb-4">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900 mb-3">Solução de Problemas</h3>
+                    <p class="text-gray-600">Tire todas suas dúvidas com nosso guia de troubleshooting para resolver qualquer problema que surgir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 bg-amber-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl glow-box">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <video width="640" height="360" controls> <source src= "video/chocolate_perfeito (1080p).mp4" type="video/mp4"> </video>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-6">Assista e Se Encante Com Os Resultados</h2>
+                    <p class="text-lg text-gray-700 mb-6">Veja como é simples criar chocolates perfeitos quando você conhece as técnicas corretas. Este vídeo mostra apenas uma pequena amostra do que você vai dominar com nosso ebook completo.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-amber-700 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Técnicas testadas e aprovadas por mais de 2.000 alunos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-amber-700 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Método passo a passo para nunca mais errar o ponto do chocolate</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-amber-700 mt-1 mr-2"></i>
+                            <span class="text-gray-700">Segredos que os chocolatiers profissionais não revelam</span>
+                        </li>
+                    </ul>
+                    <a href="#oferta" class="btn-gold text-white font-bold py-4 px-8 rounded-full text-lg inline-block">
+                        <i class="fas fa-arrow-down mr-2"></i> QUERO APRENDER AGORA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4">Resultados de Nossos Alunos</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Veja o que aconteceu quando eles aplicaram as técnicas do nosso ebook</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-amber-50 rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Claudia" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-amber-900">Ana Claudia</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"Depois de tantas tentativas frustradas, finalmente consegui temperar chocolate perfeitamente! Meus bombons agora têm aquele brilho e 'snap' profissional. Já estou vendendo para amigos e familiares!"</p>
+                    <div class="flex justify-center">
+                        <img src="imagens/depo2.jpg" alt="Bombons de chocolate" class="rounded-lg h-40 w-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-amber-50 rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ricardo" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-amber-900">Ricardo</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"Comprei o ebook sem muitas expectativas, mas me surpreendi! As técnicas são tão bem explicadas que mesmo sendo iniciante consegui resultados incríveis. Minha esposa disse que parece que comprei em loja especializada!"</p>
+                    <div class="flex justify-center">
+                        <img src="imagens/depo1.jpg" alt="Tablete de chocolate" class="rounded-lg h-40 w-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-amber-50 rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fernanda" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-amber-900">Fernanda</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"Já tinha experiência com doces, mas sempre sofria com o chocolate. Esse ebook mudou tudo! Agora faço chocolates lindos para meu café e já recebi encomendas de várias lojas da região. Valeu cada centavo!"</p>
+                    <div class="flex justify-center">
+                        <img src="imagens/depo3.jpg" alt="Chocolates decorados" class="rounded-lg h-40 w-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer -->
+    <section class="py-16 bg-amber-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 neon-white">Oferta Exclusiva Por Tempo Limitado!</h2>
+                <p class="text-xl opacity-90 max-w-2xl mx-auto neon-white">Adquira agora e receba bônus especiais totalmente gratuitos</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Bonus 1 -->
+                <div class="translucent-card rounded-xl p-6 shadow-lg border border-amber-200/20">
+                    <div class="text-amber-300 text-4xl mb-4">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-800 mb-3"> Dicas Valiosas</h3>
+                    <p class="text-amber-800">Um guia completo com as melhores dicas de confeiteiros profissionais para você fazer criações exclusivas.</p>
+                </div>
+                
+                <!-- Bonus 2 -->
+                <div class="translucent-card rounded-xl p-6 shadow-lg border border-amber-200/20">
+                    <div class="text-amber-300 text-4xl mb-4">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-800 mb-3">Acesso a Receitas Exclusivas</h3>
+                    <p class="text-amber-800">Passos a Passos importantes para você ver como cada passo deve ser executado.</p>
+                </div>
+                
+                <!-- Bonus 3 -->
+                <div class="translucent-card rounded-xl p-6 shadow-lg border border-amber-200/20">
+                    <div class="text-amber-300 text-4xl mb-4">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-800 mb-3">Lista de Fornecedores Confiáveis</h3>
+                    <p class="text-amber-800">Nossa curadoria dos melhores fornecedores de ingredientes e equipamentos com os melhores preços do mercado.</p>
+                </div>
+            </div>
+            
+            <div class="countdown-box rounded-xl p-6 max-w-2xl mx-auto text-center mb-12">
+                <h3 class="text-xl font-bold text-amber-300 mb-4">OFERTA TERMINA EM:</h3>
+                <div class="flex justify-center gap-4 mb-6">
+                    <div class="countdown-number bg-amber-800 rounded-lg p-3 w-16">
+                        <div class="text-3xl font-bold">02</div>
+                        <div class="text-xs">HORAS</div>
+                    </div>
+                    <div class="countdown-number bg-amber-800 rounded-lg p-3 w-16">
+                        <div class="text-3xl font-bold">45</div>
+                        <div class="text-xs">MINUTOS</div>
+                    </div>
+                    <div class="countdown-number bg-amber-800 rounded-lg p-3 w-16">
+                        <div class="text-3xl font-bold">30</div>
+                        <div class="text-xs">SEGUNDOS</div>
+                    </div>
+                </div>
+                <p class="text-amber-200">Esta oferta com bônus exclusivos está disponível apenas para as próximas compras!</p>
+            </div>
+            
+            <div class="text-center">
+                <a href="#oferta" class="btn-gold text-white font-bold py-4 px-8 rounded-full text-lg inline-block transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-gift mr-2"></i> QUERO MEUS BÔNUS AGORA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10 relative">
+                    <div class="guarantee-badge absolute -top-10 -left-10 z-10 text-amber-700 text-6xl opacity-20">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="bg-amber-100 rounded-xl p-8 relative z-0">
+                        <h2 class="text-3xl font-bold text-amber-900 mb-6">Garantia Incondicional de 7 Dias</h2>
+                        <p class="text-gray-700 mb-6">Queremos que você experimente nosso método sem nenhum risco. Se em 7 dias você não estiver completamente satisfeito(a), devolvemos 100% do seu dinheiro sem questionamentos.</p>
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Sem letras miúdas ou pegadinhas</span>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Processo de reembolso simples e rápido</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Seu reembolso é processado e gerenciado pela Hotmart!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-amber-50 rounded-xl p-8 border border-amber-200">
+                        <h3 class="text-2xl font-bold text-amber-900 mb-6 text-center">É Isso Que Você Vai Levar Hoje</h3>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-700 mt-1 mr-3"></i>
+                                <span class="text-gray-700 font-medium">Ebook "Chocolate Temperado Perfeito" (98 páginas)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-700 mt-1 mr-3"></i>
+                                <span class="text-gray-700 font-medium">Bônus: Receitas "Completas e Valiosas"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-700 mt-1 mr-3"></i>
+                                <span class="text-gray-700 font-medium">Acesso a um guia passo a passos Exclusivos para desenvolvimento do chocolate</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-700 mt-1 mr-3"></i>
+                                <span class="text-gray-700 font-medium">Lista de Fornecedores Confiáveis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-700 mt-1 mr-3"></i>
+                                <span class="text-gray-700 font-medium">Guia Exclusivo para evitar erros</span>
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <p class="text-gray-500 mb-2">Valor total do pacote:</p>
+                            <p class="text-2xl font-bold text-amber-700">R$67,00</p>
+                            <p class="text-gray-500 mb-4">Mas hoje você leva por apenas:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-amber-100" id="oferta">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12 bg-gradient-to-b from-amber-700 to-amber-900 text-white">
+                        <h2 class="text-3xl font-bold mb-6 neon-white">Não Deixe Essa Oportunidade Passar!</h2>
+                        <p class="mb-6 neon-white">Domine a arte do chocolate temperado perfeito e transforme sua paixão em resultados extraordinários.</p>
+                        
+                        <div class="coupon-box bg-amber-100/20 border-2 border-dashed border-amber-300 rounded-lg p-4 mb-6 text-center">
+                            <p class="font-bold text-amber-300 mb-1">USE O CUPOM:</p>
+                            <p class="text-2xl font-bold text-white">KANZENSTORE7</p>
+                            <p class="text-sm text-amber-200">30% de desconto aplicado na página de pagamento</p>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-amber-300 mt-1 mr-2"></i>
+                                <span class="text-amber-100">Método passo a passo comprovado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-amber-300 mt-1 mr-2"></i>
+                                <span class="text-amber-100">Bônus exclusivos por tempo limitado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-amber-300 mt-1 mr-2"></i>
+                                <span class="text-amber-100">Garantia de satisfação de 7 dias</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-amber-300 mt-1 mr-2"></i>
+                                <span class="text-amber-100">Guia completo de Receitas</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-bolt text-amber-300 text-2xl mr-3"></i>
+                            <p class="text-sm text-amber-200">Oferta válida apenas para as próximas 47 compras!</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <div class="text-center mb-8">
+                            <p class="text-gray-500 mb-1">De <span class="price-strike">R$67,00</span> por apenas:</p>
+                            <p class="text-5xl font-bold text-amber-700 mb-2">R$46,90</p>
+                            <p class="text-gray-600">ou 12x de R$4,69 no cartão</p>
+                        </div>
+                        
+                        <a href="https://pay.hotmart.com/F100460187H" class="block btn-gold text-white font-bold py-4 px-8 rounded-full text-lg mb-4 pulse text-center">
+                            <i class="fas fa-lock mr-2"></i> COMPRAR AGORA COM SEGURANÇA
+                        </a>
+                        
+                        <div class="flex justify-center gap-4 mb-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="h-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/1200px-Mastercard_2019_logo.svg.png" alt="Mastercard" class="h-8">
+                            <img src="imagens/logo amex.png" alt="Amex" class="h-8">
+                            <img src="imagens/logo elo.png" alt="Elo" class="h-8">
+                        </div>
+                        
+                        <div class="text-center">
+                            <img src="https://www.sitelock.com/images/sitelock/sitelock-logo.svg" alt="SiteLock Secure" class="h-8 mx-auto mb-2">
+                            <p class="text-xs text-gray-500">Compra 100% segura. Seus dados estão protegidos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4">Perguntas Frequentes</h2>
+                <p class="text-lg text-gray-600">Tire suas dúvidas sobre nosso ebook e método</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="accordion-item mb-4 border-b border-amber-100 pb-4">
+                    <button class="accordion-btn w-full flex justify-between items-center text-left font-bold text-amber-900 hover:text-amber-700 focus:outline-none">
+                        <span>Para quem é este ebook?</span>
+                        <i class="fas fa-plus text-amber-700"></i>
+                    </button>
+                    <div class="accordion-content hidden pt-2 text-gray-600">
+                        Nosso ebook é perfeito tanto para iniciantes que nunca trabalharam com chocolate quanto para quem já tem alguma experiência mas quer aperfeiçoar suas técnicas. Se você quer resultados profissionais em casa, este guia foi feito para você!
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-4 border-b border-amber-100 pb-4">
+                    <button class="accordion-btn w-full flex justify-between items-center text-left font-bold text-amber-900 hover:text-amber-700 focus:outline-none">
+                        <span>Preciso de equipamentos caros?</span>
+                        <i class="fas fa-plus text-amber-700"></i>
+                    </button>
+                    <div class="accordion-content hidden pt-2 text-gray-600">
+                        Não! Um dos diferenciais do nosso método é que ensinamos como obter resultados incríveis com utensílios simples que você provavelmente já tem em casa. Claro que se você quiser investir em equipamentos profissionais, também damos todas as orientações.
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-4 border-b border-amber-100 pb-4">
+                    <button class="accordion-btn w-full flex justify-between items-center text-left font-bold text-amber-900 hover:text-amber-700 focus:outline-none">
+                        <span>Como receberei o material?</span>
+                        <i class="fas fa-plus text-amber-700"></i>
+                    </button>
+                    <div class="accordion-content hidden pt-2 text-gray-600">
+                        Imediatamente após a confirmação do pagamento, você receberá um e-mail com os links para download dos ebooks em PDF.
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-4 border-b border-amber-100 pb-4">
+                    <button class="accordion-btn w-full flex justify-between items-center text-left font-bold text-amber-900 hover:text-amber-700 focus:outline-none">
+                        <span>E se eu não gostar do conteúdo?</span>
+                        <i class="fas fa-plus text-amber-700"></i>
+                    </button>
+                    <div class="accordion-content hidden pt-2 text-gray-600">
+                        Oferecemos uma garantia incondicional de 7 dias. Se por qualquer motivo você não ficar satisfeito(a), basta nos enviar um e-mail e devolveremos 100% do seu dinheiro, sem questionamentos. 
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-4 border-b border-amber-100 pb-4">
+                    <button class="accordion-btn w-full flex justify-between items-center text-left font-bold text-amber-900 hover:text-amber-700 focus:outline-none">
+                        <span>Posso vender os chocolates que aprender a fazer?</span>
+                        <i class="fas fa-plus text-amber-700"></i>
+                    </button>
+                    <div class="accordion-content hidden pt-2 text-gray-600">
+                        Com certeza! Inclusive, incluímos um capítulo especial com dicas para você começar seu próprio negócio de chocolates finos, desde precificação até estratégias de venda. Muitos de nossos alunos transformaram essa habilidade em uma fonte de renda extra ou até mesmo em negócio principal.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Push -->
+    <section class="py-12 bg-amber-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 neon-white">Não Perca Essa Oportunidade Única!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto neon-white">Domine a arte do chocolate temperado perfeito hoje mesmo e impressione a todos com seus resultados</p>
+            <a href="#oferta" class="btn-gold text-white font-bold py-4 px-8 rounded-full text-lg inline-block transform hover:scale-105 transition duration-300 mb-8">
+                <i class="fas fa-arrow-down mr-2"></i> QUERO MEU EBOOK AGORA
+            </a>
+            <div class="flex justify-center gap-6">
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt text-amber-300 mr-2"></i>
+                    <span>Compra Segura</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-lock text-amber-300 mr-2"></i>
+                    <span>Privacidade Garantida</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-star text-amber-300 mr-2"></i>
+                    <span>+2.347 Alunos Satisfeitos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-950 text-amber-200 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-utensils text-2xl text-amber-500 mr-2"></i>
+                        <span class="text-xl font-bold text-amber-400 font-serif">Chocolate Perfeito</span>
+                    </div>
+                    <p class="text-sm mt-2">Transformando paixão em arte desde 2018</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-sm mb-2">© 2025 Chocolate Perfeito. Todos os direitos reservados.</p>
+                    <p class="text-xs">
+                        <a href="#" class="hover:text-amber-400">Termos de Uso</a> | 
+                        <a href="#" class="hover:text-amber-400">Política de Privacidade</a> | 
+                        <a href="#" class="hover:text-amber-400">Contato</a>
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-amber-800 text-center text-xs text-amber-500">
+                <p>Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho de uma estratégia não deve ser interpretada como uma garantia de resultados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                if(content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.classList.replace('fa-plus', 'fa-minus');
+                } else {
+                    content.classList.add('hidden');
+                    icon.classList.replace('fa-minus', 'fa-plus');
+                }
+            });
+        });
+        
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.querySelectorAll('.countdown-number')[0].querySelector('div').textContent = hours.toString().padStart(2, '0');
+            document.querySelectorAll('.countdown-number')[1].querySelector('div').textContent = minutes.toString().padStart(2, '0');
+            document.querySelectorAll('.countdown-number')[2].querySelector('div').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Create chocolate particles
+        function createParticles() {
+            const colors = ['#3a1f04', '#5a3a1a', '#7a5a3a'];
+            const container = document.querySelector('.hero-gradient');
+            
+            for(let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('chocolate-particle');
+                
+                const size = Math.random() * 10 + 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = color;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.opacity = Math.random() * 0.4 + 0.2;
+                
+                container.appendChild(particle);
+                
+                // Animate particles
+                animateParticle(particle);
+            }
+        }
+        
+        function animateParticle(particle) {
+            let x = parseFloat(particle.style.left);
+            let y = parseFloat(particle.style.top);
+            let xSpeed = (Math.random() - 0.5) * 0.2;
+            let ySpeed = Math.random() * 0.1 + 0.05;
+            
+            function move() {
+                x += xSpeed;
+                y += ySpeed;
+                
+                if(x > 100 || x < 0) xSpeed *= -1;
+                if(y > 100) y = -5;
+                
+                particle.style.left = `${x}%`;
+                particle.style.top = `${y}%`;
+                
+                requestAnimationFrame(move);
+            }
+            
+            move();
+        }
+        
+        // Initialize particles
+        window.addEventListener('load', createParticles);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
